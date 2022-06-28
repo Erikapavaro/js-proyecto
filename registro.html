@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/registro.css">
+    <title>Registro</title>
+</head>
+
+<body>
+
+    <section class="Registro">
+        <section class="pt1">
+            <div class="titulo">
+                <h1>Registro</h1>
+            </div>
+            <form action="">
+                <section class="NyA">
+                    <div class="nomb">
+                        <input class="nom" placeholder="Nombre" type="name" id="nombre" name="nombre">
+                        <div class="nombre">
+                            <span class="error"></span>
+                        </div>
+                    </div>
+
+                    <div class="apell">
+                        <input class="apel" placeholder="Apellidos" type="name" id="apellido" name="apellido">
+                        <div class="apellido">
+                            <span class="error"></span>
+                        </div>
+                    </div>
+                </section><br><br>
+                <input class="ema" placeholder="Email" type="email" id="email" name="email">
+                <div class="email">
+                    <span class="error"></span>
+                </div><br><br>
+
+                <input class="contra" placeholder="Contraseña" type="password" id="contra" name="contra">
+                <div class="contraseña">
+                    <span class="error"></span>
+                </div><br><br>
+            </form>
+
+            <button class="btn open">REGISTRARME</button>
+            <div class="status"></div>
+            <div class="btn-error">
+                <span class="error"></span>
+            </div>
+            <p>¿Ya tienes cuenta? <a href="./login.html">Inicia Sesión</a></p>
+        </section>
+        <section class="pt2">
+            <img src="./img/bg_login_web_1.png">
+        </section>
+
+    </section>
+
+    <section class="modal-content acept-content">
+        <div class="modal acept-modal">
+            <div class="modal-body">
+                <img src="./img/completado.png">
+                <p>¡Registro exitoso!</p>
+            </div>
+            <button class="aceptar">ACEPTAR</button>
+        </div>
+    </section>
+
+</body>
+
+</html>
+<script src="./js/registro.js"></script>
