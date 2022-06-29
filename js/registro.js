@@ -131,7 +131,7 @@ function abrirModal() {
 function aceptarModal() {
     contentM.classList.add('acept-content');
     modal.classList.add('acept-nodal')
-    window.location = "https://erikapavaro.github.io/proyecto-js/login-registro/login"
+    window.location = "https://erikapavaro.github.io/js-proyecto/login"
 }
 
 function enviarInfo() {

@@ -5,11 +5,11 @@ var btnRegT= document.querySelector('.btn2hm2_2');
 
 
 function btnLogin(){
-    window.location='https://erikapavaro.github.io/proyecto-js/login-registro/login'
+    window.location='https://erikapavaro.github.io/js-proyecto/login'
 }
 
 function btnRegistrarse(){
-    window.location='https://erikapavaro.github.io/proyecto-js/login-registro/registro'
+    window.location='https://erikapavaro.github.io/js-proyecto/registro'
 }
 
 btnLog.addEventListener("click", btnLogin, false);
