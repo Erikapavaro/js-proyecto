@@ -4,13 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
     <title>Login</title>
 </head>
 <body>
 
-    <h1>Inicio de sesion</h1>
-    <hr>
-    <a href="https://erikapavaro.github.io/js-proyecto/">Regresar a home</a>
+    <section class="Login">
+        <section class="pt1">
+            <div class="titulo">
+                <h1>Iniciar sesión</h1>
+            </div>
+            <form action="">
+                <input class="ema" placeholder="Email" type="email" id="email" name="email">
+                <div class="email">
+                    <span class="error"></span>
+                </div><br><br>
+
+                <input class="contra" placeholder="Contraseña" type="password" id="contra" name="contra">
+                <div class="contraseña">
+                    <span class="error"></span>
+                </div><br><br>
+            </form>
+
+            <button class="btn open">INICIAR SESIÓN</button>
+            <div class="status"></div>
+            <div class="btn-error">
+                <span class="error"></span>
+            </div>
+            <p>¿No tienes una cuenta? <a href="https://erikapavaro.github.io/js-proyecto/registro">Regístrate</a></p>
+        </section>
+        <section class="pt2">
+            <img src="./img/bg_login_web_1.png">
+        </section>
+
+    </section>
     
 </body>
 </html>
