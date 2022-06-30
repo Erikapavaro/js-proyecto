@@ -117,12 +117,14 @@ function login(){
             comprobarDatos()
             setTimeout(() =>{
                 ocultarErrData()
-                statusEnvio.innerHTML+='<span class="exito">Has inciado sesión con exíto</span>'
             }, 3000);
             setTimeout(() =>{
                 limpiarForm()
                 statusEnvio.innerHTML=''
-            }, 5000);
+            }, 3000);
+            setTimeout(() =>{
+                window.location = "https://erikapavaro.github.io/js-proyecto/dashboard"
+            }, 3000);
         }else{
             comprobarDatos()
             setTimeout(() => {
