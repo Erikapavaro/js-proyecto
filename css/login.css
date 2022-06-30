@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.Login{
+.Login {
     width: 100%;
     height: auto;
     display: flex;
@@ -39,7 +39,8 @@
     text-decoration: none;
 }
 
-.ema, .contra {
+.ema,
+.contra {
     width: 100%;
     margin-top: 10px;
     font-size: 17px;
@@ -147,12 +148,104 @@ button:disabled:hover {
     font-size: 14px;
 }
 
-.comprobando{
+.comprobando {
     color: gray;
     font-family: 'Raleway', sans-serif;
 }
 
-.exito{
+.exito {
     color: rgb(38, 228, 63);
     font-family: 'Raleway', sans-serif;
+}
+
+@media(max-width: 991px) {
+    .pt1 {
+        width: 100%;
+        height: auto;
+    }
+
+    .pt2 {
+        display: none;
+    }
+
+    .titulo {
+        background-image: url(./../img/bg_login.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        padding: 60px 0px;
+        padding-top: 80px;
+    }
+
+    .pt1 h1 {
+        margin: 0px;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-size: 80px;
+    }
+
+    form {
+        padding: 20px 90px;
+    }
+
+    .ema,
+    .contra {
+        font-size: 22px;
+    }
+
+    button {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 20px 0px;
+        width: 23%;
+        cursor: pointer;
+    }
+
+    button:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 20px 0px;
+        width: 23%;
+        cursor: pointer;
+    }
+
+    button:disabled {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 20px 0px;
+        width: 23%;
+        cursor: pointer;
+    }
+
+    button:disabled:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 20px 0px;
+        width: 23%;
+        cursor: pointer;
+    }
+
+    ::placeholder {
+        font-size: 22px;
+    }
+
+    .pt1 p {
+        margin-top: 40px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .error {
+        font-family: 'Raleway', sans-serif;
+        color: #DC3545;
+        font-size: 22px;
+        margin-top: -10px;
+    }
 }
