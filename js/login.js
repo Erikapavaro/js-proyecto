@@ -106,14 +106,23 @@ function comprobarDatos(){
     }, 300);
 }
 
+function limpiarForm() {
+    email.value = ""
+    contra.value = ""
+}
+
 function login(){
     if(comprobarValidaciones()){
         if(compararData()){
             comprobarDatos()
             setTimeout(() =>{
                 ocultarErrData()
-                window.location='http://127.0.0.1:5500/LOGIN/JS/index.html'
+                statusEnvio.innerHTML+='<span class="exito">Has inciado sesión con exíto</span>'
             }, 3000);
+            setTimeout(() =>{
+                limpiarForm()
+                statusEnvio.innerHTML=''
+            }, 5000);
         }else{
             comprobarDatos()
             setTimeout(() => {
