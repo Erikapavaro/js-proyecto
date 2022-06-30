@@ -177,6 +177,7 @@ button:disabled:hover {
         width: 100%;
         padding: 60px 0px;
         padding-top: 80px;
+        margin-top: 0px;
     }
 
     .pt1 h1 {
@@ -187,7 +188,8 @@ button:disabled:hover {
     }
 
     form {
-        padding: 20px 90px;
+        padding: 15px 90px;
+        margin-top: 30px;
     }
 
     .ema,
@@ -196,7 +198,7 @@ button:disabled:hover {
     }
 
     button {
-        margin-top: 0px;
+        margin-top: 45px;
         font-size: 22px;
         border-radius: 45px;
         padding: 20px 0px;
