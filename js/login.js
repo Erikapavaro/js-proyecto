@@ -16,6 +16,8 @@ var errContra = document.querySelector('.contraseña span');
 var validEmail = /^\w+@(\w+\.)+\w{2,4}$/;
 var validContra = /^[^\s"'()*+,./:;<=>[^{|}~]+$/;
 
+limpiarForm()
+
 function mostrarError(elem, msj, inp) {
     elem.innerHTML = ''
     elem.innerHTML = msj
