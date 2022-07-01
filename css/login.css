@@ -251,3 +251,222 @@ button:disabled:hover {
         margin-top: -10px;
     }
 }
+
+@media(max-width: 767px){
+    form {
+        padding: 20px 60px;
+    }
+
+    .ema,
+    .contra {
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .input {
+        margin: 0px;
+    }
+
+    .ema,
+    .contra {
+        margin-bottom: 15px;
+    }
+
+    button {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 20px 0px;
+        width: 28%;
+        cursor: pointer;
+    }
+
+    button:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 20px 0px;
+        width: 28%;
+        cursor: pointer;
+    }
+
+    button:disabled {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 20px 0px;
+        width: 28%;
+        cursor: pointer;
+    }
+
+    button:disabled:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 20px 0px;
+        width: 28%;
+        cursor: pointer;
+    }
+
+    .pt1 p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+@media(max-width: 620px) {
+    button {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 27px 0px;
+        width: 35%;
+        cursor: pointer;
+    }
+
+    button:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 27px 0px;
+        width: 35%;
+        cursor: pointer;
+    }
+
+    button:disabled {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 27px 0px;
+        width: 35%;
+        cursor: pointer;
+    }
+
+    button:disabled:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 27px 0px;
+        width: 35%;
+        cursor: pointer;
+    }
+}
+
+@media(max-width: 530px) {
+    button {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 40%;
+        cursor: pointer;
+    }
+
+    button:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 40%;
+        cursor: pointer;
+    }
+
+    button:disabled {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 40%;
+        cursor: pointer;
+    }
+
+    button:disabled:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 40%;
+        cursor: pointer;
+    }
+}
+
+@media(max-width: 440px) {
+    button {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 55%;
+        cursor: pointer;
+    }
+
+    button:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 55%;
+        cursor: pointer;
+    }
+
+    button:disabled {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 55%;
+        cursor: pointer;
+    }
+
+    button:disabled:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 55%;
+        cursor: pointer;
+    }
+}
+
+@media(max-width: 330px) {
+    button {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 70%;
+        cursor: pointer;
+    }
+
+    button:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 70%;
+        cursor: pointer;
+    }
+
+    button:disabled {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 70%;
+        cursor: pointer;
+    }
+
+    button:disabled:hover {
+        margin-top: 0px;
+        font-size: 22px;
+        border-radius: 45px;
+        padding: 28px 0px;
+        width: 70%;
+        cursor: pointer;
+    }
+
+    .pt1 h1 {
+        font-size: 60px;
+    }
+}
