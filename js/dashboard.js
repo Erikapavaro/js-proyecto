@@ -1,5 +1,5 @@
 var menu = document.querySelector('.AppList');
-    var elem1 = document.querySelector('.icon-menu');
+    var elem1 = document.querySelector('.icono-menu');
     var elem2 = document.querySelector('.close');
 
     function openMenu() {
