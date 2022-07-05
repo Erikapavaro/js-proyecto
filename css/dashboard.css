@@ -4,6 +4,29 @@
     box-sizing: border-box;
 }
 
+.barraAzul{
+    height: 50px;
+    background-color: #005AA2;
+    padding: 10px;
+}
+
+.icono-menu{
+    height: 100%;
+}
+
+.icono-usuario-color{
+    border-radius: 100%;
+    background-color: white;
+}
+
+.barraAzul div img{
+    height: 100%;
+}
+
+.icono-flechitaAbajo{
+    height: 100%;
+}
+
 .AppList{
     width: 30%;
     height: 100vh;
