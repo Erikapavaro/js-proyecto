@@ -15,6 +15,7 @@
 
 .icono-menu{
     height: 100%;
+    cursor: pointer;
 }
 
 .icono-usuario-color{
