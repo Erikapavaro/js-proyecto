@@ -2,7 +2,7 @@ var menu = document.querySelector('.content-menu');
 var contMenu = document.querySelector('.AppList');
 
 var openMenu = document.querySelector('.icono-menu');
-var closeMenu = document.querySelector('.close');
+var closeMenu = document.querySelector('.closer');
 
 openMenu.addEventListener('click',function(){
     menu.classList.remove('close-content');
