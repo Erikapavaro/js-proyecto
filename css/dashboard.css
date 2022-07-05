@@ -95,7 +95,6 @@ h1{
 .salidaApp{
     width: 100%;
     height: 50px;
-    margin-left: 20px;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -108,6 +107,7 @@ h1{
     margin-left: 15px;
 }
 
-.salidaApp img{
-    height: 90%;
+.salidaApp img {
+    height: 70px;
+    margin-left: 20px;
 }
