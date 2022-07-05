@@ -7,7 +7,10 @@
 .barraAzul{
     height: 50px;
     background-color: #005AA2;
+    justify-content: space-between;
     padding: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
 .icono-menu{
@@ -24,11 +27,11 @@
 }
 
 .icono-flechitaAbajo{
-    height: 100%;
+    height: 50%;
+    margin-top: .76%;
 }
 
 .AppList{
-    width: 30%;
     height: 100vh;
     background-color: white;
 }
