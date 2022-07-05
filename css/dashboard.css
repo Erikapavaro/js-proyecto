@@ -54,7 +54,6 @@
     background-color: white;
     transition: .4s all;
     opacity: 1;
-    border-radius: 20px;
 }
 
 .pt1App{
@@ -171,7 +170,7 @@ h1{
     transition: .4s all;
 }
 
-.close-applist{
+.AppList.close{
     opacity: 0;
     transition: .4s all;
 }
