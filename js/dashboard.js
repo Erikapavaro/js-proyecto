@@ -1,30 +1,18 @@
 var menu = document.querySelector('.AppList');
 var cont1 = document.querySelector('.pt1App')
 var cont2 = document.querySelector('.pt2App')
-var elem1 = document.querySelector('.icono-menu');
-var elem2 = document.querySelector('.close');
 
-function openMenu() {
-    menu.style.transition = ".4s"
-    cont1.style.transition = ".4s"
-    cont2.style.transition = ".4s"
-    menu.style.width = "30%"
-    cont1.style.width = "100%"
-    cont2.style.width = "100%"
-    
-}
+var openMenu = document.querySelector('.icono-menu');
+var closeMenu = document.querySelector('.close');
 
-function closeMenu() {
-    menu.style.transition = ".4s"
-    cont1.style.transition = ".4s"
-    cont2.style.transition = ".4s"
-    menu.style.width = "0%"
-    cont1.style.width = "0%"
-    cont2.style.width = "0%"
-}
+openMenu.addEventListener('click',function(){
+    menu.classList.remove('close-applist');
+    cont1.classList.add('close-pt1')
+    cont2.classList.add('close-pt2')
+});
 
-closeMenu()
-
-elem1.addEventListener("click", openMenu, false);
-
-elem2.addEventListener("click", closeMenu, false);
+closeMenu.addEventListener('click',function(){
+    menu.classList.add('close-applist');
+    cont1.classList.add('close-pt1')
+    cont2.classList.add('close-pt2')
+});
