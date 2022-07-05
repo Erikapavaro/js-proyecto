@@ -170,7 +170,7 @@ h1{
     transition: .4s all;
 }
 
-.AppList.close{
+.close-applist{
     opacity: 0;
     transition: .4s all;
 }
