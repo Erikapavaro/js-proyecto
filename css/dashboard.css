@@ -38,9 +38,8 @@
     position: fixed;
     z-index: 99;
     top: 0;
-    left: 0;
     display: flex;
-    background-color: #0000004f;
+    background-color: #00000036;
     transition: .4s all;
     opacity: 1;
     visibility: visible;
@@ -52,6 +51,7 @@
     display: flex;
     height: 100vh;
     background-color: white;
+    height: max-content;
     transition: .4s all;
     opacity: 1;
 }
@@ -173,4 +173,5 @@ h1{
 .close-applist{
     opacity: 0;
     transition: .4s all;
+    transform: translateY(-20%);
 }
