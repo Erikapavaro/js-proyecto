@@ -4,35 +4,42 @@
     box-sizing: border-box;
 }
 
-.barraAzul{
+.barraAzul {
     height: 50px;
     background-color: #005AA2;
     justify-content: space-between;
     padding: 10px;
     display: flex;
     flex-direction: row;
+    box-shadow: 2px 2px 5px #999;
 }
 
-.icono-menu{
+.icono-menu {
     height: 100%;
     cursor: pointer;
 }
 
-.icono-usuario-color{
+.icono-usuario-color {
     border-radius: 100%;
     background-color: white;
 }
 
-.barraAzul div img{
+.iconos-juntos{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.barraAzul div img {
     height: 100%;
 }
 
-.icono-flechitaAbajo{
+.icono-flechitaAbajo {
     height: 50%;
     margin-top: .76%;
 }
 
-.content-menu{
+.content-menu {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -45,7 +52,7 @@
     visibility: visible;
 }
 
-.AppList{
+.AppList {
     width: 0%;
     position: fixed;
     display: flex;
@@ -60,30 +67,30 @@
     opacity: 1;
 }
 
-.pt1App{
+.pt1App {
     width: 100%;
     display: flex;
     flex-direction: row;
     padding: 10px;
 }
 
-.tituloApp{
+.tituloApp {
     width: 100%;
     font-family: 'Raleway', sans-serif;
     font-size: 30px;
     margin-left: 50px;
 }
 
-.closer{
+.closer {
     cursor: pointer;
 }
 
-h1{
+.pt1App h1 {
     display: flex;
     flex-direction: row;
 }
 
-.pt1App div{
+.pt1App div {
     font-family: 'Raleway', sans-serif;
     color: #005AA2;
 }
@@ -93,7 +100,7 @@ h1{
     width: 40px;
 }
 
-.pt2App{
+.pt2App {
     width: 100%;
     height: 100%;
     background-color: #e4e4e4;
@@ -101,26 +108,29 @@ h1{
     flex-direction: column;
 }
 
-.barrasApp{
+.barrasApp {
     display: flex;
     flex-direction: column;
 }
 
-.pt2App img{
+.pt2App img {
     margin-left: 10px;
 }
 
-.brr{
+.brr {
     height: 100%;
     background-color: #CCCCCC;
     width: 8px;
 }
 
-.App1{
+.App1 {
     background-color: #005AA2;
 }
 
-.barra1App, .barra2App, .barra3App, .barra4App{
+.barra1App,
+.barra2App,
+.barra3App,
+.barra4App {
     width: 100%;
     height: 70px;
     padding: 1px;
@@ -129,25 +139,33 @@ h1{
     cursor: pointer;
 }
 
-.barra1App img, .barra2App img, .barra3App img, .barra4App img{
+.barra1App img,
+.barra2App img,
+.barra3App img,
+.barra4App img {
     padding: 10px;
 }
 
-.barra1App p, .barra2App p, .barra3App p, .barra4App p{
+.barra1App p,
+.barra2App p,
+.barra3App p,
+.barra4App p {
     padding: 27px 0px;
     margin-left: 15px;
 }
 
-.barra1App p{
+.barra1App p {
     font-family: 'Raleway', sans-serif;
     color: #005AA2;
 }
 
-.barra2App p, .barra3App p, .barra4App p{
+.barra2App p,
+.barra3App p,
+.barra4App p {
     font-family: 'Raleway', sans-serif;
 }
 
-.salidaApp{
+.salidaApp {
     width: 100%;
     height: 50px;
     cursor: pointer;
@@ -157,7 +175,7 @@ h1{
     background-color: #e4e4e4;
 }
 
-.salidaApp p{
+.salidaApp p {
     font-family: 'Raleway', sans-serif;
     padding: 10px 0px;
     margin-left: 15px;
@@ -168,14 +186,139 @@ h1{
     margin-left: 30px;
 }
 
-.close-content{
+.close-content {
     opacity: 0;
     visibility: hidden;
     transition: .4s all;
 }
 
-.close-applist{
-    /* opacity: 0;
-    transition: .4s all;
-    transform: translateY(-20%); */
+.ldt {
+    background-color: white;
+    width: 100%;
+    height: 100%;
 }
+
+.pt1-ldt {
+    text-align: center;
+    align-items: center;
+    background-image: url(./../img/bg_login.jpg);
+    background-attachment: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.pt1-ldt h1{
+    text-align: center;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    padding: 30px;
+}
+
+.buscador{
+    display: flex;
+    flex-direction: row;
+    border-radius: 45px;
+    padding: 0px 30px;
+    background-color: #0059a200;
+    border: 3px solid #FFCC00;
+    width: 60%;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.buscador input{
+    background-color: #0059a200;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.buscador button{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.buscador button img{
+    width: 50px;
+    padding: 8px;
+}
+
+.buscador input::placeholder{
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    border: none;
+}
+
+.buscador input:focus{
+    border: none;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    outline: 0;
+}
+
+.barras-ldt{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.barr{
+    height: 100%;
+    background-color: #005AA2;
+    width: 8px;
+}
+
+.barra1-ldt,
+.barra2-ldt,
+.barra3-ldt,
+.barra4-ldt{
+    width: 85%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    border: 1px solid #CCCCCC;
+}
+
+.barra1-ldt{
+    border-top: 2px solid #CCCCCC;
+}
+
+.barra4-ldt{
+    border-bottom: 2px solid #CCCCCC;
+}
+
+.barra1-ldt img,
+.barra2-ldt img,
+.barra3-ldt img,
+.barra4-ldt img {
+    height: 30px;
+    margin-left: 15px;
+}
+
+.barra1-ldt p,
+.barra2-ldt p,
+.barra3-ldt p,
+.barra4-ldt p{
+    padding: 30px 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    text-align: left;
+    margin-left: 25px;
+}
+
+.icon-juntos{
+    margin-left: 650px;
+    padding: 25px 14px;
+}
+
