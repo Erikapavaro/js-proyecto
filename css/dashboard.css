@@ -5,13 +5,14 @@
 }
 
 .barraAzul {
-    height: 50px;
-    background-color: #005AA2;
+    height: 70px;
+    background-color: rgb(0, 90, 162);
     justify-content: space-between;
     padding: 10px;
+    position: relative;
     display: flex;
     flex-direction: row;
-    box-shadow: 2px 2px 5px #999;
+    box-shadow: rgb(0 0 0 / 83%) -1px 8px 22px -6px;
 }
 
 .icono-menu {
@@ -24,7 +25,7 @@
     background-color: white;
 }
 
-.iconos-juntos{
+.iconos-juntos {
     display: flex;
     flex-direction: row;
     cursor: pointer;
@@ -71,7 +72,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 15px;
 }
 
 .tituloApp {
@@ -208,10 +209,10 @@
     background-size: cover;
     width: 100%;
     height: auto;
-    justify-content: center;
+    padding-bottom: 40px;
 }
 
-.pt1-ldt h1{
+.pt1-ldt h1 {
     text-align: center;
     color: white;
     font-family: 'Raleway', sans-serif;
@@ -219,44 +220,45 @@
     padding: 30px;
 }
 
-.buscador{
+.buscador {
     display: flex;
     flex-direction: row;
     border-radius: 45px;
-    padding: 0px 30px;
+    padding: 0px 35px;
     background-color: #0059a200;
     border: 3px solid #FFCC00;
     width: 60%;
     cursor: pointer;
-    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.buscador input{
+.buscador input {
     background-color: #0059a200;
     border: none;
     width: 100%;
     cursor: pointer;
 }
 
-.buscador button{
+.buscador button {
     background-color: rgba(255, 255, 255, 0);
     border: none;
     cursor: pointer;
 }
 
-.buscador button img{
+.buscador button img {
     width: 50px;
     padding: 8px;
 }
 
-.buscador input::placeholder{
+.buscador input::placeholder {
     color: white;
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
     border: none;
 }
 
-.buscador input:focus{
+.buscador input:focus {
     border: none;
     color: white;
     font-family: 'Raleway', sans-serif;
@@ -264,15 +266,16 @@
     outline: 0;
 }
 
-.barras-ldt{
+.barras-ldt {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
     margin-top: 50px;
+    margin-bottom: 35px;
 }
 
-.barr{
+.barr {
     height: 100%;
     background-color: #005AA2;
     width: 8px;
@@ -281,7 +284,7 @@
 .barra1-ldt,
 .barra2-ldt,
 .barra3-ldt,
-.barra4-ldt{
+.barra4-ldt {
     width: 85%;
     height: 80px;
     display: flex;
@@ -290,11 +293,11 @@
     border: 1px solid #CCCCCC;
 }
 
-.barra1-ldt{
+.barra1-ldt {
     border-top: 2px solid #CCCCCC;
 }
 
-.barra4-ldt{
+.barra4-ldt {
     border-bottom: 2px solid #CCCCCC;
 }
 
@@ -309,7 +312,7 @@
 .barra1-ldt p,
 .barra2-ldt p,
 .barra3-ldt p,
-.barra4-ldt p{
+.barra4-ldt p {
     padding: 30px 0px;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
@@ -317,8 +320,22 @@
     margin-left: 25px;
 }
 
-.icon-juntos{
-    margin-left: 650px;
+.icon-juntos {
+    margin-left: auto;
     padding: 25px 14px;
 }
 
+.plus{
+    width: 85px;
+    height: 85px;
+    display: flex;
+    border-radius: 100%;
+    background-color: #005AA2;
+    margin-left: auto;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.plus img{
+    padding: 20px 19px;
+}
