@@ -10,6 +10,7 @@ var tareas = ["Hacer tarea de ingles", "Realizar quiz de matemáticas","Acabar E
 var tabla = document.querySelector('.tarea');
 var buscador = document.querySelector('#buscador1')
 var barra = document.querySelector('.barra');
+var contenedor = document.querySelector('.pt2-ldt')
 
 openMenu.addEventListener('click',function(){
     /* menu.classList.remove('close-content'); */
@@ -53,7 +54,7 @@ buscador.addEventListener('keyup', function(){
             tabla.innerHTML += `<p>${filtro[index]}</p>`
         }
     } else {
-        tabla.innerHTML += `<p>No se encontraron coincidencias.<p>`
+        contenedor.innerHTML += `<span class="error">No se encontraron coincidencias.</span>`
     }
 
 });
