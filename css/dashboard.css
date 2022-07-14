@@ -266,6 +266,12 @@
     outline: 0;
 }
 
+.error{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    color: #DC3545;
+}
+
 .barras-ldt {
     display: flex;
     flex-direction: column;
