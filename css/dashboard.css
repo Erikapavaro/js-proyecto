@@ -220,6 +220,15 @@
     padding: 30px;
 }
 
+.pt2-ldt{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 35px;
+}
+
 .buscador {
     display: flex;
     flex-direction: row;
@@ -258,6 +267,13 @@
     border: none;
 }
 
+.buscador input:focus::placeholder {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    border: none;
+}
+
 .buscador input:focus {
     border: none;
     color: white;
@@ -272,28 +288,13 @@
     color: #DC3545;
 }
 
-.barras-ldt {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 35px;
-}
-
-.barr {
-    height: 100%;
-    background-color: #005AA2;
-    width: 8px;
-}
-
 .barra {
     width: 85%;
     height: 80px;
     display: flex;
     flex-direction: row;
-    cursor: pointer;
     border: 1px solid #CCCCCC;
+    border-left: 8px solid #005AA2;
 }
 
 .br1-ldt{
@@ -309,7 +310,7 @@
     margin-left: 15px;
 }
 
-.barra p {
+.barra-txt {
     padding: 30px 0px;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
@@ -317,20 +318,24 @@
     margin-left: 25px;
 }
 
-.icon-juntos {
+.barra-btn {
+    cursor: pointer;
     margin-left: auto;
     padding: 25px 14px;
 }
 
 .plus{
+    display: block;
     width: 85px;
     height: 85px;
     display: flex;
     border-radius: 100%;
     background-color: #005AA2;
     margin-left: auto;
-    margin-bottom: 20px;
+    margin-bottom: auto;
     margin-right: 20px;
+    padding: initial;
+    cursor: pointer;
 }
 
 .plus img{

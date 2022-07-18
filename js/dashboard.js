@@ -6,42 +6,54 @@ var closeMenu = document.querySelector('.closer');
 
 var btnSalir = document.querySelector('.salidaApp');
 
-var tareas = ["Hacer tarea de ingles", "Realizar quiz de matemáticas","Acabar EL PRINCIPITO", "Entregar maqueta de arte"];
-var tabla = document.querySelector('.tarea');
+var tareas = ["Hacer tarea de ingles", "Realizar quiz de matemáticas", "Acabar EL PRINCIPITO", "Entregar maqueta de arte"];
 var buscador = document.querySelector('#buscador1')
-var barra = document.querySelector('.barra');
-var contenedor = document.querySelector('.pt2-ldt')
+var tabla = document.querySelector('.pt2-ldt');
 
-openMenu.addEventListener('click',function(){
+openMenu.addEventListener('click', function () {
     /* menu.classList.remove('close-content'); */
     /* contMenu.classList.add('close-applist') */
-    contMenu.style.width="30%"
+    contMenu.style.width = "30%"
     menu.classList.remove('close-content');
 });
 
-closeMenu.addEventListener('click',function(){
-    contMenu.style.width="0%"
+closeMenu.addEventListener('click', function () {
+    contMenu.style.width = "0%"
     menu.classList.add('close-content');
 });
 
-menu.addEventListener('click',function(){
-    contMenu.style.width="0%"
+menu.addEventListener('click', function () {
+    contMenu.style.width = "0%"
     menu.classList.add('close-content');
 });
 
-btnSalir.addEventListener('click',function(){
+btnSalir.addEventListener('click', function () {
     window.location = "https://erikapavaro.github.io/js-proyecto/login"
 });
 
 function inicio() {
     for (let index = 0; index < tareas.length; index++) {
-        tabla.innerHTML += `<p>${tareas[index]}</p>`
-
+        if (index != (tareas.length - 1)) {
+            tabla.innerHTML += `<div class="barra">
+            <div class="barra-txt"><p>${tareas[index]}</p></div>
+            <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
+            <img class="eliminar" src="./iconos/eliminar.png"></div>`
+        } else {
+            tabla.innerHTML += `
+            <div class="barra barra-last">
+            <div class="barra-txt"><p>${tareas[index]}</p></div>
+            <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
+            <img class="eliminar" src="./iconos/eliminar.png"></div>`
+        }
     }
 }
+
 inicio();
 
-buscador.addEventListener('keyup', function(){
+
+
+
+buscador.addEventListener('keyup', function () {
     tabla.innerHTML = ''
     var texto = buscador.value.toLowerCase();
 
@@ -51,10 +63,20 @@ buscador.addEventListener('keyup', function(){
 
     if (filtro.length > 0) {
         for (let index = 0; index < filtro.length; index++) {
-            tabla.innerHTML += `<p>${filtro[index]}</p>`
+            if (index != (filtro.length - 1)) {
+                tabla.innerHTML += `<div class="barra">
+            <div class="barra-txt"><p>${tareas[index]}</p></div>
+            <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
+            <img class="eliminar" src="./iconos/eliminar.png"></div>`
+            } else {
+                tabla.innerHTML += `
+            <div class="barra barra-last">
+            <div class="barra-txt"><p>${tareas[index]}</p></div>
+            <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
+            <img class="eliminar" src="./iconos/eliminar.png"></div>`
+            }
         }
     } else {
-        contenedor.innerHTML += `<span class="error">No se encontraron coincidencias.</span>`
+        tabla.innerHTML += `<span class="error">No se encontraron coincidencias</span>`
     }
-
 });
