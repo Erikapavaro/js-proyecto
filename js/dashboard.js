@@ -10,6 +10,16 @@ var tareas = ["Hacer tarea de ingles", "Realizar quiz de matemáticas", "Acabar 
 var buscador = document.querySelector('#buscador1')
 var tabla = document.querySelector('.pt2-ldt');
 
+var contentM = document.querySelector('.modal-content');
+var modal = document.querySelector('.modal');
+
+var guardarM = document.querySelector('.guardar');
+var cancelarM = document.querySelector('.cancelar');
+
+var plus = document.querySelector('.plus');
+
+var inputM = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+
 openMenu.addEventListener('click', function () {
     /* menu.classList.remove('close-content'); */
     /* contMenu.classList.add('close-applist') */
@@ -76,7 +86,24 @@ buscador.addEventListener('keyup', function () {
     } else {
         tabla.innerHTML += `<span class="error">No se encontraron coincidencias</span>`
     }
-
-
-
 });
+
+function abrirModal() {
+    contentM.classList.remove('acept-content');
+    modal.classList.add('acept-modal')
+
+}
+
+function guardarModal() {
+    contentM.classList.add('acept-content');
+    modal.classList.add('acept-nodal')
+}
+
+function cancelarModal() {
+    contentM.classList.add('acept-content');
+    modal.classList.add('acept-nodal')
+}
+
+plus.addEventListener("click", abrirModal, false);
+guardarM.addEventListener("click", guardarModal, false);
+cancelarM.addEventListener("click", cancelarModal, false);
