@@ -324,20 +324,149 @@
     padding: 25px 14px;
 }
 
+/* .cont-plus{
+    position: fixed;
+} */
+
 .plus{
-    display: block;
     width: 85px;
     height: 85px;
     display: flex;
     border-radius: 100%;
-    background-color: #005AA2;
     margin-left: auto;
     margin-bottom: auto;
     margin-right: 20px;
     padding: initial;
+    background-color: #005AA2;
     cursor: pointer;
+    /* position: fixed; */
 }
 
 .plus img{
     padding: 20px 19px;
+}
+
+.modal {
+    width: 57%;
+    justify-content: end;
+    height: auto;
+    background-color: white;
+    border-radius: 16px;
+    text-align: center;
+    align-items: center;
+    padding: 40px 68px;
+    margin: auto;
+}
+
+.modal-content {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0000004f;
+    transition: .4s all;
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content p {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    font-size: 50px;
+}
+
+.caja-com{
+    width: 100%;
+    height: 160px;
+    margin-top: 20px;
+    background-color: #dedede;
+    border: none;
+}
+
+.modal input::placeholder{
+    margin-top: 20px;
+    font-family: 'Raleway', sans-serif;
+    padding: 20px;
+    font-size: 20px;
+    color: #787676;
+    border: none;
+}
+
+.modal input:focus::placeholder{
+    margin-top: 20px;
+    font-family: 'Raleway', sans-serif;
+    padding: 20px 0px;
+    font-size: 20px;
+    color: #787676;
+    border: none;
+}
+
+.modal input:focus{
+    border: none;
+    width: 100%;
+    height: 160px;
+    margin-top: 20px;
+    background-color: #dedede;
+    font-family: 'Raleway', sans-serif;
+    padding: 20px;
+    font-size: 20px;
+    color: #787676;
+    border: none;
+    outline: 0;
+}
+
+.botones-modal{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.guardar{
+    margin-top: 40px;
+    margin-left: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    border-radius: 11px;
+    padding: 20px 0px;
+    background-color: #005AA2;
+    border: 3px solid #005AA2;
+    color: white;
+    width: 30%;
+    cursor: pointer;
+}
+
+.cancelar{
+    margin-top: 40px;
+    margin-left: auto;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    border-radius: 11px;
+    padding: 20px 0px;
+    background-color: white;
+    border: 3px solid #CCCCCC;
+    color: #CCCCCC;
+    width: 30%;
+    cursor: pointer;
+}
+
+.guardar:hover {
+    background-color: #012848;
+    border: 3px solid #012848;
+}
+
+.cancelar:hover {
+    background-color: #CCCCCC;
+    border: 3px solid #CCCCCC;
+    color: white;
+}
+
+.acept-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s all;
 }
