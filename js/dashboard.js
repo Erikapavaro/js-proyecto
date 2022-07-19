@@ -50,9 +50,6 @@ function inicio() {
 
 inicio();
 
-
-
-
 buscador.addEventListener('keyup', function () {
     tabla.innerHTML = ''
     var texto = buscador.value.toLowerCase();
@@ -65,18 +62,21 @@ buscador.addEventListener('keyup', function () {
         for (let index = 0; index < filtro.length; index++) {
             if (index != (filtro.length - 1)) {
                 tabla.innerHTML += `<div class="barra">
-            <div class="barra-txt"><p>${tareas[index]}</p></div>
-            <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
-            <img class="eliminar" src="./iconos/eliminar.png"></div>`
-            } else {
-                tabla.innerHTML += `
-            <div class="barra barra-last">
-            <div class="barra-txt"><p>${tareas[index]}</p></div>
-            <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
-            <img class="eliminar" src="./iconos/eliminar.png"></div>`
+                <div class="barra-txt"><p>${filtro[index]}</p></div>
+                <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
+                <img class="eliminar" src="./iconos/eliminar.png"></div>`
+                } else {
+                    tabla.innerHTML += `
+                <div class="barra barra-last">
+                <div class="barra-txt"><p>${filtro[index]}</p></div>
+                <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
+                <img class="eliminar" src="./iconos/eliminar.png"></div>`
+                }
             }
-        }
     } else {
         tabla.innerHTML += `<span class="error">No se encontraron coincidencias</span>`
     }
+
+
+
 });
