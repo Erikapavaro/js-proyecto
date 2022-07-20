@@ -354,7 +354,7 @@
     border-radius: 16px;
     text-align: center;
     align-items: center;
-    padding: 40px 68px;
+    padding: 32px 60px;
     margin: auto;
 }
 
@@ -389,7 +389,7 @@
 }
 
 .modal input::placeholder{
-    margin-top: 20px;
+    margin-top: -40px;
     font-family: 'Raleway', sans-serif;
     padding: 20px;
     font-size: 20px;
@@ -427,12 +427,12 @@
 }
 
 .guardar{
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 20px;
     font-family: 'Raleway', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     border-radius: 11px;
-    padding: 20px 0px;
+    padding: 17px 0px;
     background-color: #005AA2;
     border: 3px solid #005AA2;
     color: white;
@@ -441,12 +441,12 @@
 }
 
 .cancelar{
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: auto;
     font-family: 'Raleway', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     border-radius: 11px;
-    padding: 20px 0px;
+    padding: 17px 0px;
     background-color: white;
     border: 3px solid #CCCCCC;
     color: #CCCCCC;
@@ -469,4 +469,35 @@
     opacity: 0;
     visibility: hidden;
     transition: .4s all;
+}
+
+.guardar-error{
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    color: #DC3545;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+.input-error{
+    border: 3px solid #DC3545;
+}
+
+.guardando{
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    color: #CCCCCC;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+.guardado{
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -10px;
 }

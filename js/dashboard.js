@@ -14,11 +14,16 @@ var contentM = document.querySelector('.modal-content');
 var modal = document.querySelector('.modal');
 
 var guardarM = document.querySelector('.guardar');
+var errGuardar = document.querySelector('.guardar-error');
+var statusInfo = document.querySelector('.status');
 var cancelarM = document.querySelector('.cancelar');
 
 var plus = document.querySelector('.plus');
 
-var inputM = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+var input = document.querySelector('.caja-com');
+var filM = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+var filM1 = /^[^\s,.-;:'¨"',.:;]+$/;
+var filM2 = /[0-9]/;
 
 openMenu.addEventListener('click', function () {
     /* menu.classList.remove('close-content'); */
@@ -60,6 +65,27 @@ function inicio() {
 
 inicio();
 
+function mostrarError(elem, msj, inp) {
+    elem.innerHTML = ''
+    elem.innerHTML = msj
+    guardarM.disabled = true;
+}
+
+function errInput(){
+    input.classList.add('input-error');
+}
+
+function corrInput(){
+    input.classList.remove('input-error');
+}
+
+function ocultarError(elem, inp) {
+    elem.innerHTML = ''
+    guardarM.disabled = false;
+}
+
+
+
 buscador.addEventListener('keyup', function () {
     tabla.innerHTML = ''
     var texto = buscador.value.toLowerCase();
@@ -88,22 +114,67 @@ buscador.addEventListener('keyup', function () {
     }
 });
 
-function abrirModal() {
-    contentM.classList.remove('acept-content');
-    modal.classList.add('acept-modal')
+function cancelarModal() {
+    contentM.classList.add('acept-content');
+    modal.classList.add('acept-modal');
+    limpiarForm()
+    ocultarError(errGuardar,guardarM)
+    corrInput()
+    statusInfo.classList.remove('guardando');
+    statusInfo.classList.remove('guardado');
+}
 
+function validarModal() {
+    if (input.value == '') {
+        mostrarError(errGuardar, 'Este campo debe ser llenado', guardarM)
+        errInput()
+        return false
+    } else {
+        if (filM.test(input.value)) {
+            ocultarError(errGuardar, guardarM)
+            corrInput()
+            return true
+        } else {
+            mostrarError(errGuardar, 'Solo puedes introducir letras, números y signos de puntuación', guardarM)
+            errInput()
+            return false
+        }
+    }
+}
+
+function limpiarForm() {
+    input.value = ""
 }
 
 function guardarModal() {
-    contentM.classList.add('acept-content');
-    modal.classList.add('acept-nodal')
+    if (validarModal()) {
+        ocultarError(errGuardar);
+        corrInput();
+        setTimeout(() => {
+            statusInfo.innerHTML = '<span class="guardando">Guardando...</span>'
+            return true
+        }, 100);
+        setTimeout(() => {
+            statusInfo.innerHTML = ''
+        }, 2000);
+        setTimeout(() => {
+            limpiarForm()
+        }, 3000);
+    } else {
+        mostrarError(errGuardar, 'Completar los campos correspondientes', guardarM)
+        errInput()
+        return false
+    }
 }
 
-function cancelarModal() {
-    contentM.classList.add('acept-content');
-    modal.classList.add('acept-nodal')
+
+function abrirModal() {
+    contentM.classList.remove('acept-content');
+    modal.classList.remove('acept-modal')
 }
 
+
+input.addEventListener("keyup", validarModal, false);
 plus.addEventListener("click", abrirModal, false);
 guardarM.addEventListener("click", guardarModal, false);
 cancelarM.addEventListener("click", cancelarModal, false);
