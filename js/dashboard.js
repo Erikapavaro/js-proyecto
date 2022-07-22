@@ -21,9 +21,7 @@ var cancelarM = document.querySelector('.cancelar');
 var plus = document.querySelector('.plus');
 
 var input = document.querySelector('.caja-com');
-var filM = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-var filM1 = /^[^\s,.-;:'¨"',.:;]+$/;
-var filM2 = /[0-9]/;
+var filM = /^[a-zA-Z0-9ÑñÁáÉéÍíÓóÚúÜü,.-;:'¨"',.:;\s]+$/;
 
 openMenu.addEventListener('click', function () {
     /* menu.classList.remove('close-content'); */
@@ -71,11 +69,11 @@ function mostrarError(elem, msj, inp) {
     guardarM.disabled = true;
 }
 
-function errInput(){
+function errInput() {
     input.classList.add('input-error');
 }
 
-function corrInput(){
+function corrInput() {
     input.classList.remove('input-error');
 }
 
@@ -84,7 +82,19 @@ function ocultarError(elem, inp) {
     guardarM.disabled = false;
 }
 
+function sinGuardar(){
+    guardarM.classList.add('sin-guardar')
+    if (guardarM == 'sin-guardar'){
+        guardarM.add.disabled
+    }
+}
 
+function guardar(){
+    guardarM.classList.remove('sin-guardar')
+    if (guardarM == 'guardar'){
+        guardarM.remove.disabled
+    }
+}
 
 buscador.addEventListener('keyup', function () {
     tabla.innerHTML = ''
@@ -101,14 +111,14 @@ buscador.addEventListener('keyup', function () {
                 <div class="barra-txt"><p>${filtro[index]}</p></div>
                 <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
                 <img class="eliminar" src="./iconos/eliminar.png"></div>`
-                } else {
-                    tabla.innerHTML += `
+            } else {
+                tabla.innerHTML += `
                 <div class="barra barra-last">
                 <div class="barra-txt"><p>${filtro[index]}</p></div>
                 <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
                 <img class="eliminar" src="./iconos/eliminar.png"></div>`
-                }
             }
+        }
     } else {
         tabla.innerHTML += `<span class="error">No se encontraron coincidencias</span>`
     }
@@ -118,7 +128,7 @@ function cancelarModal() {
     contentM.classList.add('acept-content');
     modal.classList.add('acept-modal');
     limpiarForm()
-    ocultarError(errGuardar,guardarM)
+    ocultarError(errGuardar, guardarM)
     corrInput()
     statusInfo.classList.remove('guardando');
     statusInfo.classList.remove('guardado');
@@ -126,17 +136,19 @@ function cancelarModal() {
 
 function validarModal() {
     if (input.value == '') {
-        mostrarError(errGuardar, 'Este campo debe ser llenado', guardarM)
+        sinGuardar()
         errInput()
+        mostrarError(errGuardar, 'Este campo debe ser llenado', guardarM)
         return false
     } else {
         if (filM.test(input.value)) {
+            guardar()
             ocultarError(errGuardar, guardarM)
             corrInput()
             return true
         } else {
-            mostrarError(errGuardar, 'Solo puedes introducir letras, números y signos de puntuación', guardarM)
             errInput()
+            mostrarError(errGuardar, 'Solo puedes introducir letras, números y signos de puntuación', guardarM)
             return false
         }
     }
@@ -146,8 +158,14 @@ function limpiarForm() {
     input.value = ""
 }
 
+function agregarTarea() {
+    tabla.innerHTML = ''
+    const count = tareas.push(input.value)
+}
+
 function guardarModal() {
     if (validarModal()) {
+        guardar()
         ocultarError(errGuardar);
         corrInput();
         setTimeout(() => {
@@ -156,11 +174,18 @@ function guardarModal() {
         }, 100);
         setTimeout(() => {
             statusInfo.innerHTML = ''
-        }, 2000);
+            agregarTarea()
+        }, 200);
         setTimeout(() => {
             limpiarForm()
+            inicio()
+        }, 2000);
+        setTimeout(() => {
+            contentM.classList.add('acept-content');
+            modal.classList.add('acept-modal');
         }, 3000);
     } else {
+        sinGuardar()
         mostrarError(errGuardar, 'Completar los campos correspondientes', guardarM)
         errInput()
         return false
