@@ -501,3 +501,9 @@
     margin-top: 20px;
     margin-bottom: -10px;
 }
+
+.guardar:disabled{
+    background-color: #012848;
+    border: 3px solid #012848;
+    cursor: none;
+}
