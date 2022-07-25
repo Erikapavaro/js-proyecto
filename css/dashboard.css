@@ -484,6 +484,10 @@
     border: 3px solid #DC3545;
 }
 
+.modal .input-error:focus{
+    border: 3px solid #DC3545;
+}
+
 .guardando{
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
