@@ -388,8 +388,7 @@
     border: none;
 }
 
-.modal input::placeholder{
-    margin-top: -40px;
+.modal textarea::placeholder{
     font-family: 'Raleway', sans-serif;
     padding: 20px;
     font-size: 20px;
@@ -397,16 +396,15 @@
     border: none;
 }
 
-.modal input:focus::placeholder{
-    margin-top: 20px;
+.modal textarea:focus::placeholder{
     font-family: 'Raleway', sans-serif;
-    padding: 20px 0px;
+    padding: 0px 0px;
     font-size: 20px;
     color: #787676;
     border: none;
 }
 
-.modal input:focus{
+.modal textarea:focus{
     border: none;
     width: 100%;
     height: 160px;
