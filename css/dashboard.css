@@ -509,3 +509,143 @@
     border: 3px solid #012848;
     cursor: none;
 }
+
+@media(max-width: 600px){
+    .pt1-ldt h1 {
+        font-size: 40px;
+    }
+
+    .buscador{
+        width: 70%;
+    }
+
+    .barra{
+        width: 90%;
+        border-left: 14px solid #005AA2;
+    }
+
+    .pt2-ldt {
+        margin-top: 40px;
+        margin-bottom: 35px;
+    }
+}
+
+@media(max-width: 800px){
+    
+    .modal {
+        width: 80%;
+    }
+
+    .modal-content p {
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 50px;
+        padding: 20px;
+    }
+
+    .botones-modal {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cancelar {
+        margin-top: 30px;
+        margin-left: 0px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 17px;
+        border-radius: 11px;
+        padding: 17px 0px;
+        background-color: white;
+        border: 3px solid #CCCCCC;
+        color: #CCCCCC;
+        width: 45%;
+        cursor: pointer;
+    }
+
+    .guardar {
+        margin-top: 30px;
+        margin-left: 20px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 17px;
+        border-radius: 11px;
+        padding: 17px 0px;
+        background-color: #005AA2;
+        border: 3px solid #005AA2;
+        color: white;
+        width: 45%;
+        cursor: pointer;
+    }
+}
+
+
+@media(max-width: 560px){
+    .modal-content p {
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 40px;
+        padding: 20px;
+    }
+}
+
+@media(max-width: 500px){
+    .modal-content p {
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 35px;
+        padding: 20px;
+    }
+}
+
+@media(max-width: 460px){
+    .modal-content p {
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 30px;
+        padding: 10px;
+    }
+
+    .modal {
+        padding: 31px 30px;
+        margin: auto;
+    }
+}
+
+@media(max-width: 460px){
+    .barra-txt{
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 430px){
+    .barra-txt{
+        font-size: 13px;
+    }
+}
+
+@media(max-width: 395px){
+    .barra-txt{
+        font-size: 11px;
+        padding: 33px 0px;
+    }
+
+    .plus {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media(max-width: 360px){
+    .barra-txt{
+        font-size: 9px;
+        padding: 35px 0px;
+    }
+}
+
+@media(max-width: 360px){
+    .barra-btn {
+        padding: 25px 10px;
+    }
+}
