@@ -172,7 +172,8 @@
     cursor: pointer;
     display: flex;
     flex-direction: row;
-    margin-top: 55%;
+    margin-top: auto;
+    margin-bottom: 20px;
     background-color: #e4e4e4;
 }
 
@@ -220,7 +221,7 @@
     padding: 30px;
 }
 
-.pt2-ldt{
+.pt2-ldt {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -282,7 +283,7 @@
     outline: 0;
 }
 
-.error{
+.error {
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     color: #DC3545;
@@ -297,11 +298,11 @@
     border-left: 8px solid #005AA2;
 }
 
-.br1-ldt{
+.br1-ldt {
     border-top: 2px solid #CCCCCC;
 }
 
-.br4-ld{
+.br4-ld {
     border-bottom: 2px solid #CCCCCC;
 }
 
@@ -328,7 +329,7 @@
     position: fixed;
 } */
 
-.plus{
+.plus {
     width: 85px;
     height: 85px;
     display: flex;
@@ -342,7 +343,7 @@
     /* position: fixed; */
 }
 
-.plus img{
+.plus img {
     padding: 20px 19px;
 }
 
@@ -380,7 +381,7 @@
     font-size: 50px;
 }
 
-.caja-com{
+.caja-com {
     width: 100%;
     height: 160px;
     margin-top: 20px;
@@ -388,7 +389,7 @@
     border: none;
 }
 
-.modal textarea::placeholder{
+.modal textarea::placeholder {
     font-family: 'Raleway', sans-serif;
     padding: 20px;
     font-size: 20px;
@@ -396,7 +397,7 @@
     border: none;
 }
 
-.modal textarea:focus::placeholder{
+.modal textarea:focus::placeholder {
     font-family: 'Raleway', sans-serif;
     padding: 0px 0px;
     font-size: 20px;
@@ -404,7 +405,7 @@
     border: none;
 }
 
-.modal textarea:focus{
+.modal textarea:focus {
     border: none;
     width: 100%;
     height: 160px;
@@ -418,13 +419,13 @@
     outline: 0;
 }
 
-.botones-modal{
+.botones-modal {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.guardar{
+.guardar {
     margin-top: 30px;
     margin-left: 20px;
     font-family: 'Raleway', sans-serif;
@@ -438,7 +439,7 @@
     cursor: pointer;
 }
 
-.cancelar{
+.cancelar {
     margin-top: 30px;
     margin-left: auto;
     font-family: 'Raleway', sans-serif;
@@ -469,7 +470,7 @@
     transition: .4s all;
 }
 
-.guardar-error{
+.guardar-error {
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
     color: #DC3545;
@@ -478,15 +479,15 @@
     margin-bottom: -10px;
 }
 
-.input-error{
+.input-error {
     border: 3px solid #DC3545;
 }
 
-.modal .input-error:focus{
+.modal .input-error:focus {
     border: 3px solid #DC3545;
 }
 
-.guardando{
+.guardando {
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
     color: #CCCCCC;
@@ -495,7 +496,7 @@
     margin-bottom: -10px;
 }
 
-.guardado{
+.guardado {
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
     color: green;
@@ -504,22 +505,40 @@
     margin-bottom: -10px;
 }
 
-.guardar:disabled{
+.guardar:disabled {
     background-color: #012848;
     border: 3px solid #012848;
     cursor: none;
 }
 
-@media(max-width: 600px){
+@media (min-width:801px) {
+    .AppList-open {
+        width: 30%
+    }
+}
+
+@media (max-width:800px) {
+    .AppList-open {
+        width: 60%
+    }
+}
+
+@media (max-width:400px) {
+    .AppList-open {
+        width: 75%
+    }
+}
+
+@media(max-width: 600px) {
     .pt1-ldt h1 {
         font-size: 40px;
     }
 
-    .buscador{
+    .buscador {
         width: 70%;
     }
 
-    .barra{
+    .barra {
         width: 90%;
         border-left: 14px solid #005AA2;
     }
@@ -530,8 +549,8 @@
     }
 }
 
-@media(max-width: 800px){
-    
+@media(max-width: 800px) {
+
     .modal {
         width: 80%;
     }
@@ -581,7 +600,7 @@
 }
 
 
-@media(max-width: 560px){
+@media(max-width: 560px) {
     .modal-content p {
         font-family: 'Raleway', sans-serif;
         text-align: center;
@@ -590,7 +609,7 @@
     }
 }
 
-@media(max-width: 500px){
+@media(max-width: 500px) {
     .modal-content p {
         font-family: 'Raleway', sans-serif;
         text-align: center;
@@ -599,7 +618,7 @@
     }
 }
 
-@media(max-width: 460px){
+@media(max-width: 460px) {
     .modal-content p {
         font-family: 'Raleway', sans-serif;
         text-align: center;
@@ -613,20 +632,20 @@
     }
 }
 
-@media(max-width: 460px){
-    .barra-txt{
+@media(max-width: 460px) {
+    .barra-txt {
         font-size: 15px;
     }
 }
 
-@media(max-width: 430px){
-    .barra-txt{
+@media(max-width: 430px) {
+    .barra-txt {
         font-size: 13px;
     }
 }
 
-@media(max-width: 395px){
-    .barra-txt{
+@media(max-width: 395px) {
+    .barra-txt {
         font-size: 11px;
         padding: 33px 0px;
     }
@@ -637,15 +656,69 @@
     }
 }
 
-@media(max-width: 360px){
-    .barra-txt{
+@media(max-width: 360px) {
+    .barra-txt {
         font-size: 9px;
         padding: 35px 0px;
     }
 }
 
-@media(max-width: 360px){
+@media(max-width: 352px) {
     .barra-btn {
         padding: 25px 10px;
+    }
+
+    .modal {
+        padding: 15px 20px;
+        margin: auto;
+    }
+
+    .caja-com {
+        width: 100%;
+        height: 120px;
+        margin-top: 20px;
+        background-color: #dedede;
+    }
+
+    .modal textarea::placeholder {
+        font-size: 15px;
+    }
+
+    .modal textarea:focus::placeholder {
+        font-size: 15px;
+    }
+
+    .modal textarea:focus {
+        font-size: 15px;
+        height: 120px;
+    }
+
+    .modal-content p {
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 25px;
+        padding-top: 20px;
+    }
+
+    .botones-modal {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        margin-top: -29px;
+        justify-content: center;
+    }
+
+    .cancelar,
+    .guardar {
+        font-size: 12px;
+    }
+
+    .guardar-error {
+        font-size: 12px;
+        color: #DC3545;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
