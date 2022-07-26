@@ -25,23 +25,19 @@ var input = document.querySelector('.caja-com');
 var filM = /^[a-zA-Z0-9ÑñÁáÉéÍíÓóÚúÜü,.-;:'¨"',.:;\s]+$/;
 
 openMenu.addEventListener('click', function () {
-    contMenu.style.width = "30%"
+    contMenu.classList.add('AppList-open');
     menu.classList.remove('close-content');
-    /* if (body.width = "800px") {
-        contMenu.style.width = "70%"
-        menu.classList.remove('close-content');
-    } */
 });
 
 
 closeMenu.addEventListener('click', function () {
-    contMenu.style.width = "30%"
-    menu.classList.remove('close-content');
+    menu.classList.add('close-content');
+    contMenu.classList.remove('AppList-open');
 });
 
 menu.addEventListener('click', function () {
-    contMenu.style.width = "0%"
     menu.classList.add('close-content');
+    contMenu.classList.remove('AppList-open');
 });
 
 btnSalir.addEventListener('click', function () {
