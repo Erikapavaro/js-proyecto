@@ -13,11 +13,20 @@ var tabla = document.querySelector('.pt2-ldt');
 
 var contentM = document.querySelector('.modal-content');
 var modal = document.querySelector('.modal');
+var contentEd = document.querySelector('.editar-content');
+var modalEd = document.querySelector('.editarM');
 
 var guardarM = document.querySelector('.guardar');
+var guardarEd = document.querySelector('.guardarEd');
 var errGuardar = document.querySelector('.guardar-error');
+var errGuardarEd = document.querySelector('.guardarEd-error');
 var statusInfo = document.querySelector('.status');
 var cancelarM = document.querySelector('.cancelar');
+var cancelarEdi = document.querySelector('.cancelarEd');
+/* var editar = document.querySelector('.editar-m'); */
+var eliminar = document.querySelector('.eliminar-m');
+var inputEd = document.querySelector('.caja-comen');
+var inputEdOcul = document.querySelector('#inpOculto')
 
 var plus = document.querySelector('.plus');
 
@@ -28,7 +37,6 @@ openMenu.addEventListener('click', function () {
     contMenu.classList.add('AppList-open');
     menu.classList.remove('close-content');
 });
-
 
 closeMenu.addEventListener('click', function () {
     menu.classList.add('close-content');
@@ -44,19 +52,21 @@ btnSalir.addEventListener('click', function () {
     window.location = "https://erikapavaro.github.io/js-proyecto/login"
 });
 
+
 function inicio() {
     for (let index = 0; index < tareas.length; index++) {
         if (index != (tareas.length - 1)) {
             tabla.innerHTML += `<div class="barra">
             <div class="barra-txt"><p>${tareas[index]}</p></div>
-            <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
-            <img class="eliminar" src="./iconos/eliminar.png"></div>`
+            <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM()" src="./iconos/pen-blue.png"></div>
+            <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
+
         } else {
             tabla.innerHTML += `
             <div class="barra barra-last">
             <div class="barra-txt"><p>${tareas[index]}</p></div>
-            <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
-            <img class="eliminar" src="./iconos/eliminar.png"></div>`
+            <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM()" src="./iconos/pen-blue.png"></div>
+            <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
         }
     }
 }
@@ -109,14 +119,14 @@ buscador.addEventListener('keyup', function () {
             if (index != (filtro.length - 1)) {
                 tabla.innerHTML += `<div class="barra">
                 <div class="barra-txt"><p>${filtro[index]}</p></div>
-                <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
-                <img class="eliminar" src="./iconos/eliminar.png"></div>`
+                <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM()" src="./iconos/pen-blue.png"></div>
+                <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
             } else {
                 tabla.innerHTML += `
                 <div class="barra barra-last">
                 <div class="barra-txt"><p>${filtro[index]}</p></div>
-                <div class="barra-btn"><img class="editar" src="./iconos/pen-blue.png">
-                <img class="eliminar" src="./iconos/eliminar.png"></div>`
+                <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM()" src="./iconos/pen-blue.png"></div>
+                <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
             }
         }
     } else {
@@ -132,6 +142,11 @@ function cancelarModal() {
     corrInput()
     statusInfo.classList.remove('guardando');
     statusInfo.classList.remove('guardado');
+}
+
+function cancelarEd(){
+    contentEd.classList.add('acept-editar');
+    modalEd.classList.add('acept-editarM');
 }
 
 function validarModal() {
@@ -192,14 +207,54 @@ function guardarModal() {
     }
 }
 
+function guardarEditarM() {
+    if (validarModal()) {
+        guardar()
+        ocultarError(errGuardar);
+        corrInput();
+        setTimeout(() => {
+            statusInfo.innerHTML = '<span class="guardando">Guardando...</span>'
+            return true
+        }, 100);
+        setTimeout(() => {
+            statusInfo.innerHTML = ''
+            agregarTarea()
+        }, 200);
+        setTimeout(() => {
+            limpiarForm()
+            inicio()
+        }, 2000);
+        setTimeout(() => {
+            contentM.classList.add('acept-content');
+            modal.classList.add('acept-modal');
+        }, 3000);
+    } else {
+        sinGuardar()
+        mostrarError(errGuardar, 'Completar los campos correspondientes', guardarM)
+        errInput()
+        return false
+    }
+}
+
+function editarTarea(id){
+    habilitarEdicion();
+    inputEd.value = tareas[id];
+    inputEdOcul.value = id;
+}
+
 
 function abrirModal() {
     contentM.classList.remove('acept-content');
     modal.classList.remove('acept-modal')
 }
 
+function abrirEditarM(){
+    contentEd.classList.remove('acept-editar');
+    modalEd.classList.remove('acept-editarM');
+}
 
 input.addEventListener("keyup", validarModal, false);
 plus.addEventListener("click", abrirModal, false);
 guardarM.addEventListener("click", guardarModal, false);
 cancelarM.addEventListener("click", cancelarModal, false);
+/* editar.addEventListener("click", abrirEditarM, false); */
