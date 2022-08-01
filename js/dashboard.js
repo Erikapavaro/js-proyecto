@@ -21,16 +21,17 @@ var guardarEd = document.querySelector('.guardarEd');
 var errGuardar = document.querySelector('.guardar-error');
 var errGuardarEd = document.querySelector('.guardarEd-error');
 var statusInfo = document.querySelector('.status');
+var statusInfoEd = document.querySelector('.statusEd');
 var cancelarM = document.querySelector('.cancelar');
 var cancelarEdi = document.querySelector('.cancelarEd');
 /* var editar = document.querySelector('.editar-m'); */
 var eliminar = document.querySelector('.eliminar-m');
-var inputEd = document.querySelector('.caja-comen');
+var inputEd = document.querySelector('#caja-comen');
 var inputEdOcul = document.querySelector('#inpOculto')
 
 var plus = document.querySelector('.plus');
 
-var input = document.querySelector('.caja-com');
+var input = document.querySelector('#caja-com');
 var filM = /^[a-zA-Z0-9ÑñÁáÉéÍíÓóÚúÜü,.-;:'¨"',.:;\s]+$/;
 
 openMenu.addEventListener('click', function () {
@@ -58,14 +59,14 @@ function inicio() {
         if (index != (tareas.length - 1)) {
             tabla.innerHTML += `<div class="barra">
             <div class="barra-txt"><p>${tareas[index]}</p></div>
-            <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM()" src="./iconos/pen-blue.png"></div>
+            <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
             <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
 
         } else {
             tabla.innerHTML += `
             <div class="barra barra-last">
             <div class="barra-txt"><p>${tareas[index]}</p></div>
-            <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM()" src="./iconos/pen-blue.png"></div>
+            <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
             <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
         }
     }
@@ -77,32 +78,47 @@ function mostrarError(elem, msj) {
     elem.innerHTML = ''
     elem.innerHTML = msj
     guardarM.disabled = true;
+    guardarEd.disabled = true;
 }
 
 function errInput() {
-    input.classList.add('input-error');
+    if (input) {
+        input.classList.add('input-error');
+    } if (inputEd) {
+        inputEd.classList.add('input-error');
+    }
+
 }
 
 function corrInput() {
-    input.classList.remove('input-error');
+    if (input) {
+        input.classList.remove('input-error');
+    } if (inputEd) {
+        inputEd.classList.remove('input-error');
+    }
 }
 
 function ocultarError(elem) {
     elem.innerHTML = ''
     guardarM.disabled = false;
+    guardarEd.disabled = false;
 }
 
 function sinGuardar() {
     guardarM.classList.add('sin-guardar')
-    if (guardarM == 'sin-guardar') {
+    guardarEd.classList.add('sin-guardar')
+    if (guardarM == 'sin-guardar' || guardarEd == 'sin-guardar') {
         guardarM.add.disabled
+        guardarEd.add.disabled
     }
 }
 
 function guardar() {
     guardarM.classList.remove('sin-guardar')
-    if (guardarM == 'guardar') {
+    guardarEd.classList.remove('sin-guardar')
+    if (guardarM == 'guardar' || guardarEd == 'guardar') {
         guardarM.remove.disabled
+        guardarEd.remove.disabled
     }
 }
 
@@ -119,13 +135,13 @@ buscador.addEventListener('keyup', function () {
             if (index != (filtro.length - 1)) {
                 tabla.innerHTML += `<div class="barra">
                 <div class="barra-txt"><p>${filtro[index]}</p></div>
-                <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM()" src="./iconos/pen-blue.png"></div>
+                <div class="barra-btn"><div class="editar-m" ><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
                 <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
             } else {
                 tabla.innerHTML += `
                 <div class="barra barra-last">
                 <div class="barra-txt"><p>${filtro[index]}</p></div>
-                <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM()" src="./iconos/pen-blue.png"></div>
+                <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
                 <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
             }
         }
@@ -139,31 +155,56 @@ function cancelarModal() {
     modal.classList.add('acept-modal');
     limpiarForm()
     ocultarError(errGuardar, guardarM)
-    corrInput()
+    corrInput(input)
     statusInfo.classList.remove('guardando');
     statusInfo.classList.remove('guardado');
 }
 
-function cancelarEd(){
+function cancelarEd() {
     contentEd.classList.add('acept-editar');
     modalEd.classList.add('acept-editarM');
+    limpiarForm()
+    ocultarError(errGuardarEd, guardarEd)
+    corrInput(inputEd)
+    statusInfoEd.classList.remove('guardando');
+    statusInfoEd.classList.remove('guardado');
 }
 
 function validarModal() {
     if (input.value == '') {
-        sinGuardar()
-        errInput()
+        sinGuardar(guardarM)
+        errInput(input)
         mostrarError(errGuardar, 'Este campo debe ser llenado', guardarM)
         return false
     } else {
-        if (filM.test(input.value)) {
+        if ((filM.test(input.value))) {
             guardar()
             ocultarError(errGuardar, guardarM)
-            corrInput()
+            corrInput(input)
             return true
         } else {
-            errInput()
+            errInput(input)
             mostrarError(errGuardar, 'Solo puedes introducir letras, números y signos de puntuación', guardarM)
+            return false
+        }
+    }
+}
+
+function validarModalEd() {
+    if (inputEd.value == '') {
+        sinGuardar(guardarEd)
+        errInput(inputEd)
+        mostrarError(errGuardarEd, 'Este campo debe ser llenado', guardarEd)
+        return false
+    } else {
+        if ((filM.test(inputEd.value))) {
+            guardar()
+            ocultarError(errGuardarEd, guardarEd)
+            corrInput(inputEd)
+            return true
+        } else {
+            errInput(inputEd)
+            mostrarError(errGuardarEd, 'Solo puedes introducir letras, números y signos de puntuación', guardarEd)
             return false
         }
     }
@@ -171,6 +212,7 @@ function validarModal() {
 
 function limpiarForm() {
     input.value = ""
+    inputEd.value = ""
 }
 
 function agregarTarea() {
@@ -178,11 +220,16 @@ function agregarTarea() {
     const count = tareas.push(input.value)
 }
 
+function actualizar() {
+    tabla.innerHTML = ""
+    inicio();
+}
+
 function guardarModal() {
     if (validarModal()) {
         guardar()
         ocultarError(errGuardar);
-        corrInput();
+        corrInput(input);
         setTimeout(() => {
             statusInfo.innerHTML = '<span class="guardando">Guardando...</span>'
             return true
@@ -200,44 +247,20 @@ function guardarModal() {
             modal.classList.add('acept-modal');
         }, 3000);
     } else {
-        sinGuardar()
+        sinGuardar(guardarM)
         mostrarError(errGuardar, 'Completar los campos correspondientes', guardarM)
-        errInput()
+        errInput(input)
         return false
     }
 }
 
-function guardarEditarM() {
-    if (validarModal()) {
-        guardar()
-        ocultarError(errGuardar);
-        corrInput();
-        setTimeout(() => {
-            statusInfo.innerHTML = '<span class="guardando">Guardando...</span>'
-            return true
-        }, 100);
-        setTimeout(() => {
-            statusInfo.innerHTML = ''
-            agregarTarea()
-        }, 200);
-        setTimeout(() => {
-            limpiarForm()
-            inicio()
-        }, 2000);
-        setTimeout(() => {
-            contentM.classList.add('acept-content');
-            modal.classList.add('acept-modal');
-        }, 3000);
-    } else {
-        sinGuardar()
-        mostrarError(errGuardar, 'Completar los campos correspondientes', guardarM)
-        errInput()
-        return false
-    }
+function habilitarEdicion(){
+    inputEd.disabled = false;
+    guardarEd.disabled = false;
 }
 
-function editarTarea(id){
-    habilitarEdicion();
+function editarTarea(id) {
+    habilitarEdicion()
     inputEd.value = tareas[id];
     inputEdOcul.value = id;
 }
@@ -248,13 +271,47 @@ function abrirModal() {
     modal.classList.remove('acept-modal')
 }
 
-function abrirEditarM(){
+function abrirEditarM() {
     contentEd.classList.remove('acept-editar');
     modalEd.classList.remove('acept-editarM');
+}
+
+function guardarElemento() {
+    var txt = inputEd.value;
+    var id = Number(inputEdOcul.value);
+    if (validarModalEd()) {
+        guardar()
+        ocultarError(errGuardarEd);
+        corrInput(inputEd);
+        tareas[id] = txt;
+        setTimeout(() => {
+            statusInfoEd.innerHTML = '<span class="guardando">Guardando...</span>'
+            return true
+        }, 100);
+        setTimeout(() => {
+            statusInfoEd.innerHTML = ''
+            inputEd.value = ''
+            inputEdOcul.value = ''
+        }, 200);
+        setTimeout(() => {
+            limpiarForm()
+            actualizar();
+        }, 2000);
+        setTimeout(() => {
+            contentEd.classList.add('acept-content');
+            modalEd.classList.add('acept-modal');
+        }, 3000);
+    } else {
+        sinGuardar(guardarEd)
+        mostrarError(errGuardarEd, 'Completar los campos correspondientes', guardarEd)
+        errInput(inputEd)
+        return false
+    }
 }
 
 input.addEventListener("keyup", validarModal, false);
 plus.addEventListener("click", abrirModal, false);
 guardarM.addEventListener("click", guardarModal, false);
 cancelarM.addEventListener("click", cancelarModal, false);
+guardarEd.addEventListener("click", guardarElemento, false);
 /* editar.addEventListener("click", abrirEditarM, false); */
