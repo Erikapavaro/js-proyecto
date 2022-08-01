@@ -452,12 +452,12 @@
     border: none;
 }
 
-.editarM textarea::placeholder {
+.editarM textarea{
     font-family: 'Raleway', sans-serif;
     padding: 20px;
     font-size: 20px;
     color: #787676;
-    border: none;
+    border: 0;
 }
 
 .modal textarea:focus::placeholder {
@@ -468,13 +468,6 @@
     border: none;
 }
 
-.editarM textarea:focus::placeholder {
-    font-family: 'Raleway', sans-serif;
-    padding: 0px 0px;
-    font-size: 20px;
-    color: #787676;
-    border: none;
-}
 
 .modal textarea:focus {
     border: none;
@@ -624,11 +617,15 @@
     margin-bottom: -10px;
 }
 
+.modal .input-error {
+    border: 3px solid #DC3545;
+}
+
 .input-error {
     border: 3px solid #DC3545;
 }
 
-.inputEd-error {
+.editarM .input-error {
     border: 3px solid #DC3545;
 }
 
@@ -636,7 +633,7 @@
     border: 3px solid #DC3545;
 }
 
-.editarM .inputEd-error:focus {
+.editarM .input-error:focus {
     border: 3px solid #DC3545;
 }
 
@@ -661,6 +658,14 @@
 .guardar:disabled {
     background-color: #012848;
     border: 3px solid #012848;
+    opacity: .5;
+    cursor: none;
+}
+
+.guardarEd:disabled{
+    background-color: #012848;
+    border: 3px solid #012848;
+    opacity: .5;
     cursor: none;
 }
 

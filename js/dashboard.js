@@ -74,6 +74,16 @@ function inicio() {
 
 inicio();
 
+function abilitarBtn(btn){
+    btn.attr
+
+
+}
+
+function deshabilitarBtn(){
+
+}
+
 function mostrarError(elem, msj) {
     elem.innerHTML = ''
     elem.innerHTML = msj
@@ -203,6 +213,7 @@ function validarModalEd() {
             corrInput(inputEd)
             return true
         } else {
+            console.log("holaaaaaa")
             errInput(inputEd)
             mostrarError(errGuardarEd, 'Solo puedes introducir letras, números y signos de puntuación', guardarEd)
             return false
@@ -274,33 +285,32 @@ function abrirModal() {
 function abrirEditarM() {
     contentEd.classList.remove('acept-editar');
     modalEd.classList.remove('acept-editarM');
+    console.log("hola");
 }
 
 function guardarElemento() {
     var txt = inputEd.value;
     var id = Number(inputEdOcul.value);
     if (validarModalEd()) {
-        guardar()
+         guardar()
         ocultarError(errGuardarEd);
         corrInput(inputEd);
         tareas[id] = txt;
         setTimeout(() => {
             statusInfoEd.innerHTML = '<span class="guardando">Guardando...</span>'
-            return true
-        }, 100);
+        }, 1000);
         setTimeout(() => {
             statusInfoEd.innerHTML = ''
             inputEd.value = ''
             inputEdOcul.value = ''
-        }, 200);
+        }, 5000);
         setTimeout(() => {
             limpiarForm()
             actualizar();
-        }, 2000);
+        }, 5000);
         setTimeout(() => {
-            contentEd.classList.add('acept-content');
-            modalEd.classList.add('acept-modal');
-        }, 3000);
+            cancelarEd()
+        }, 6000);
     } else {
         sinGuardar(guardarEd)
         mostrarError(errGuardarEd, 'Completar los campos correspondientes', guardarEd)
@@ -310,6 +320,7 @@ function guardarElemento() {
 }
 
 input.addEventListener("keyup", validarModal, false);
+inputEd.addEventListener("keyup", validarModalEd, false);
 plus.addEventListener("click", abrirModal, false);
 guardarM.addEventListener("click", guardarModal, false);
 cancelarM.addEventListener("click", cancelarModal, false);
