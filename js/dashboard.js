@@ -15,6 +15,8 @@ var contentM = document.querySelector('.modal-content');
 var modal = document.querySelector('.modal');
 var contentEd = document.querySelector('.editar-content');
 var modalEd = document.querySelector('.editarM');
+var contentElimin = document.querySelector('.elimin-content');
+var modalElimin = document.querySelector('.elimin');
 
 var guardarM = document.querySelector('.guardar');
 var guardarEd = document.querySelector('.guardarEd');
@@ -24,7 +26,7 @@ var statusInfo = document.querySelector('.status');
 var statusInfoEd = document.querySelector('.statusEd');
 var cancelarM = document.querySelector('.cancelar');
 var cancelarEdi = document.querySelector('.cancelarEd');
-/* var editar = document.querySelector('.editar-m'); */
+var cancelarElim = document.querySelector('.cancelarElim')
 var eliminar = document.querySelector('.eliminar-m');
 var inputEd = document.querySelector('#caja-comen');
 var inputEdOcul = document.querySelector('#inpOculto')
@@ -60,14 +62,14 @@ function inicio() {
             tabla.innerHTML += `<div class="barra">
             <div class="barra-txt"><p>${tareas[index]}</p></div>
             <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
-            <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
+            <div class="eliminar-m"><img class="eliminar" onclick="abrirElim()" src="./iconos/eliminar.png"></div></div>`
 
         } else {
             tabla.innerHTML += `
             <div class="barra barra-last">
             <div class="barra-txt"><p>${tareas[index]}</p></div>
             <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
-            <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
+            <div class="eliminar-m"><img class="eliminar" onclick="abrirElim()" src="./iconos/eliminar.png"></div></div>`
         }
     }
 }
@@ -146,13 +148,13 @@ buscador.addEventListener('keyup', function () {
                 tabla.innerHTML += `<div class="barra">
                 <div class="barra-txt"><p>${filtro[index]}</p></div>
                 <div class="barra-btn"><div class="editar-m" ><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
-                <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
+                <div class="eliminar-m"><img class="eliminar" onclick="abrirElim()" src="./iconos/eliminar.png"></div></div>`
             } else {
                 tabla.innerHTML += `
                 <div class="barra barra-last">
                 <div class="barra-txt"><p>${filtro[index]}</p></div>
                 <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
-                <div class="eliminar-m"><img class="eliminar" onclick="" src="./iconos/eliminar.png"></div></div>`
+                <div class="eliminar-m"><img class="eliminar" onclick="abrirElim()" src="./iconos/eliminar.png"></div></div>`
             }
         }
     } else {
@@ -178,6 +180,12 @@ function cancelarEd() {
     corrInput(inputEd)
     statusInfoEd.classList.remove('guardando');
     statusInfoEd.classList.remove('guardado');
+}
+
+function cancelarElim() {
+    console.log("hola")
+    contentElimin.classList.add('acept-eliminar');
+    modalElimin.classList.add('acept-elemin');
 }
 
 function validarModal() {
@@ -285,7 +293,11 @@ function abrirModal() {
 function abrirEditarM() {
     contentEd.classList.remove('acept-editar');
     modalEd.classList.remove('acept-editarM');
-    console.log("hola");
+}
+
+function abrirElim() {
+    contentElimin.classList.remove('acept-eliminar');
+    modalElimin.classList.remove('acept-elemin');
 }
 
 function guardarElemento() {
@@ -325,4 +337,3 @@ plus.addEventListener("click", abrirModal, false);
 guardarM.addEventListener("click", guardarModal, false);
 cancelarM.addEventListener("click", cancelarModal, false);
 guardarEd.addEventListener("click", guardarElemento, false);
-/* editar.addEventListener("click", abrirEditarM, false); */
