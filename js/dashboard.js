@@ -17,6 +17,7 @@ var contentEd = document.querySelector('.editar-content');
 var modalEd = document.querySelector('.editarM');
 var contentElimin = document.querySelector('.elimin-content');
 var modalElimin = document.querySelector('.elimin');
+var eliminBody = document.querySelector('.elimin-body');
 
 var guardarM = document.querySelector('.guardar');
 var guardarEd = document.querySelector('.guardarEd');
@@ -24,9 +25,11 @@ var errGuardar = document.querySelector('.guardar-error');
 var errGuardarEd = document.querySelector('.guardarEd-error');
 var statusInfo = document.querySelector('.status');
 var statusInfoEd = document.querySelector('.statusEd');
+var statusInfoElim = document.querySelector('.statusElim')
 var cancelarM = document.querySelector('.cancelar');
 var cancelarEdi = document.querySelector('.cancelarEd');
 var cancelarElim = document.querySelector('.cancelarElim')
+var eliminTarea = document.querySelector('.eliminarElim')
 var eliminar = document.querySelector('.eliminar-m');
 var inputEd = document.querySelector('#caja-comen');
 var inputEdOcul = document.querySelector('#inpOculto')
@@ -75,14 +78,27 @@ function inicio() {
 }
 
 inicio();
+/* elimInicio();
 
-function abilitarBtn(btn){
+function elimInicio() {
+    for (let index = 0; index < tareas.length; index++) {
+        if (index != (tareas.length - 1)) {
+            eliminBody.innerHTML +=  `<div class="botones-elimin">
+                    <button class="cancelarElim" onclick="cancelarElimin(${index})">CANCELAR</button>
+                    <button class="eliminarElim" onclick="eliminarTarea(${index})">ELIMINAR</button>
+                </div>` 
+
+        }
+    }
+}
+ */
+function abilitarBtn(btn) {
     btn.attr
 
 
 }
 
-function deshabilitarBtn(){
+function deshabilitarBtn() {
 
 }
 
@@ -182,8 +198,7 @@ function cancelarEd() {
     statusInfoEd.classList.remove('guardado');
 }
 
-function cancelarElim() {
-    console.log("hola")
+function cancelarElimin() {
     contentElimin.classList.add('acept-eliminar');
     modalElimin.classList.add('acept-elemin');
 }
@@ -237,6 +252,7 @@ function limpiarForm() {
 function agregarTarea() {
     tabla.innerHTML = ''
     const count = tareas.push(input.value)
+    actualizar()
 }
 
 function actualizar() {
@@ -259,7 +275,6 @@ function guardarModal() {
         }, 200);
         setTimeout(() => {
             limpiarForm()
-            inicio()
         }, 2000);
         setTimeout(() => {
             contentM.classList.add('acept-content');
@@ -273,7 +288,7 @@ function guardarModal() {
     }
 }
 
-function habilitarEdicion(){
+function habilitarEdicion() {
     inputEd.disabled = false;
     guardarEd.disabled = false;
 }
@@ -304,7 +319,7 @@ function guardarElemento() {
     var txt = inputEd.value;
     var id = Number(inputEdOcul.value);
     if (validarModalEd()) {
-         guardar()
+        guardar()
         ocultarError(errGuardarEd);
         corrInput(inputEd);
         tareas[id] = txt;
@@ -331,9 +346,16 @@ function guardarElemento() {
     }
 }
 
+function eliminarTarea() {
+    tabla.innerHTML = ''
+    tareas.splice(1);
+    actualizar()
+}
+
 input.addEventListener("keyup", validarModal, false);
 inputEd.addEventListener("keyup", validarModalEd, false);
 plus.addEventListener("click", abrirModal, false);
 guardarM.addEventListener("click", guardarModal, false);
 cancelarM.addEventListener("click", cancelarModal, false);
 guardarEd.addEventListener("click", guardarElemento, false);
+eliminTarea.addEventListener('click',);

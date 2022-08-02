@@ -389,6 +389,7 @@
     justify-content: end;
     height: auto;
     background-color: white;
+    mask-repeat: no-repeat;
     border-radius: 16px;
     text-align: center;
     align-items: center;
@@ -666,6 +667,12 @@
 .eliminarElim:hover{
     background-color: #8b000e;
     border: 3px solid #8b000e;
+}
+
+.cancelarElim:hover{
+    background-color: #999999;
+    border: 3px solid #999999;
+    color: white;
 }
 
 .acept-content {
