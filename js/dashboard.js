@@ -358,4 +358,4 @@ plus.addEventListener("click", abrirModal, false);
 guardarM.addEventListener("click", guardarModal, false);
 cancelarM.addEventListener("click", cancelarModal, false);
 guardarEd.addEventListener("click", guardarElemento, false);
-eliminTarea.addEventListener('click',);
+/* eliminTarea.addEventListener('click',); */
