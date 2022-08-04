@@ -30,11 +30,11 @@
     flex-direction: row;
 }
 
-.editar-m{
+.editar-m {
     cursor: pointer;
 }
 
-.eliminar-m{
+.eliminar-m {
     cursor: pointer;
 }
 
@@ -313,12 +313,13 @@
     border-bottom: 2px solid #CCCCCC;
 }
 
-.editar-m, .eliminar-m {
+.editar-m,
+.eliminar-m {
     height: 30px;
     margin-left: 15px;
 }
 
-.barra img{
+.barra img {
     height: 100%;
 }
 
@@ -372,7 +373,7 @@
     margin: auto;
 }
 
-.editarM{
+.editarM {
     width: 57%;
     justify-content: end;
     height: auto;
@@ -384,12 +385,11 @@
     margin: auto;
 }
 
-.elimin{
+.elimin {
     width: 68%;
     justify-content: end;
     height: auto;
     background-color: white;
-    mask-repeat: no-repeat;
     border-radius: 16px;
     text-align: center;
     align-items: center;
@@ -412,7 +412,7 @@
     visibility: visible;
 }
 
-.editar-content{
+.editar-content {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -428,7 +428,7 @@
     visibility: visible;
 }
 
-.elimin-content{
+.elimin-content {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -444,11 +444,11 @@
     visibility: visible;
 }
 
-.elimin-body{
+.elimin-body {
     padding: 40px 90px;
 }
 
-.elimin-body img{
+.elimin-body img {
     height: 190px;
 }
 
@@ -458,7 +458,7 @@
     font-size: 50px;
 }
 
-.editar-content p{
+.editar-content p {
     font-family: 'Raleway', sans-serif;
     text-align: left;
     font-size: 50px;
@@ -468,7 +468,7 @@
     font-family: 'Raleway', sans-serif;
     text-align: center;
     font-size: 40px;
-    padding: 0px 40px;
+    padding: 0px;
 }
 
 .caja-com {
@@ -479,7 +479,7 @@
     border: none;
 }
 
-.caja-comen{
+.caja-comen {
     width: 100%;
     height: 160px;
     margin-top: 20px;
@@ -495,7 +495,7 @@
     border: none;
 }
 
-.editarM textarea{
+.editarM textarea {
     font-family: 'Raleway', sans-serif;
     padding: 20px;
     font-size: 20px;
@@ -546,13 +546,13 @@
     width: 100%;
 }
 
-.botones-modalEd{
+.botones-modalEd {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.botones-elimin{
+.botones-elimin {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -614,7 +614,7 @@
     cursor: pointer;
 }
 
-.cancelarEd{
+.cancelarEd {
     margin-top: 30px;
     margin-left: auto;
     font-family: 'Raleway', sans-serif;
@@ -628,7 +628,7 @@
     cursor: pointer;
 }
 
-.cancelarElim{
+.cancelarElim {
     margin-top: 30px;
     margin-left: auto;
     font-family: 'Raleway', sans-serif;
@@ -664,12 +664,12 @@
     color: white;
 }
 
-.eliminarElim:hover{
+.eliminarElim:hover {
     background-color: #8b000e;
     border: 3px solid #8b000e;
 }
 
-.cancelarElim:hover{
+.cancelarElim:hover {
     background-color: #999999;
     border: 3px solid #999999;
     color: white;
@@ -756,11 +756,51 @@
     cursor: none;
 }
 
-.guardarEd:disabled{
+.guardarEd:disabled {
     background-color: #012848;
     border: 3px solid #012848;
     opacity: .5;
     cursor: none;
+}
+
+@media (max-width:1009px){
+
+    .elimin-body {
+        padding: 30px 91px;
+    }
+
+    .elimin {
+        width: 60%;
+    }
+
+    .elimin-content p {
+        font-size: 25px;
+        padding: 0px;
+    }
+
+    .cancelarElim, .eliminarElim{
+        width: 45%;
+    }
+}
+
+@media (max-width:830px){
+
+    .elimin-body {
+        padding: 30px 91px;
+    }
+
+    .elimin-body img {
+        height: 130px;
+    }
+
+    .elimin-content p {
+        font-size: 20px;
+    }
+
+    .cancelarElim, .eliminarElim{
+        width: 45%;
+        font-size: 13px;
+    }
 }
 
 @media (min-width:801px) {
@@ -772,6 +812,51 @@
 @media (max-width:800px) {
     .AppList-open {
         width: 60%
+    }
+}
+
+@media (max-width:730px){
+    .elimin {
+        width: 70%;
+    }
+}
+
+@media (max-width:630px){
+    .elimin {
+        width: 75%;
+    }
+}
+
+@media (max-width:600px){
+    .elimin {
+        width: 75%;
+    }
+
+    .elimin-body {
+        padding: 30px 35px;
+    }
+
+    .elimin-content p {
+        font-size: 25px;
+    }
+}
+
+@media (max-width:520px){
+    .elimin-content p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:430px){
+    .elimin-content p {
+        font-size: 15px;
+    }
+
+    .cancelarElim, .eliminarElim {
+        width: 50%;
+        font-size: 10px;
+        padding: 13px;
+        margin-top: 20px;
     }
 }
 
@@ -882,6 +967,10 @@
         padding: 31px 30px;
         margin: auto;
     }
+
+    .guardarEd-error {
+        font-size: 13px;
+    }
 }
 
 @media(max-width: 460px) {
@@ -905,6 +994,14 @@
     .plus {
         width: 70px;
         height: 70px;
+    }
+    
+    .guardarEd-error {
+        font-size: 11px;
+    }
+
+    .guardando {
+        font-size: 14px;
     }
 }
 
@@ -972,5 +1069,189 @@
         text-align: center;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width:350px){
+    .elimin-content p {
+        font-size: 15px;
+    }
+
+    .cancelarElim, .eliminarElim {
+        width: 50%;
+        font-size: 10px;
+        padding: 13px;
+        margin-top: 20px;
+    }
+
+    .eliminarElim{
+        margin-left: 10px;
+    }
+
+    .elimin-body img {
+        height: 130px;
+        margin-top: -25px;
+    }
+
+    .elimin-body {
+        padding: 30px 20px;
+    }
+}
+
+@media(max-width: 900px) {
+    .editarM {
+        width: 75%;
+    }
+}
+
+
+@media(max-width: 600px) {
+    .editar-content p {
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .editarM {
+        width: 80%;
+        justify-content: end;
+        height: auto;
+        background-color: white;
+        border-radius: 16px;
+        text-align: center;
+        align-items: center;
+        padding: 50px 60px;
+        margin: auto;
+    }
+
+    .cancelarEd {
+        margin-top: 30px;
+        margin-left: 0px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 17px;
+        border-radius: 11px;
+        padding: 17px 0px;
+        background-color: white;
+        border: 3px solid #CCCCCC;
+        color: #CCCCCC;
+        width: 50%;
+        cursor: pointer;
+    }
+
+    .guardarEd {
+        margin-top: 30px;
+        margin-left: 31px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 17px;
+        border-radius: 11px;
+        padding: 17px 0px;
+        background-color: #005AA2;
+        border: 3px solid #005AA2;
+        color: white;
+        width: 50%;
+        cursor: pointer;
+    }
+
+}
+
+@media(max-width: 465px) {
+    .editar-content p {
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .editarM textarea {
+        font-family: 'Raleway', sans-serif;
+        padding: 20px;
+        font-size: 15px;
+        color: #787676;
+        border: 0;
+    }
+
+    .editarM textarea:focus{
+        font-size: 15px;
+    }
+
+    .cancelarEd,
+    .guardarEd {
+        font-size: 13px;
+    }
+
+    .guardarEd {
+        margin-left: 10px;
+    }
+
+    .editarM {
+        padding: 35px 60px;
+    }
+
+    .guardarEd-error {
+        margin-top: 9px;
+        margin-bottom: -20px;
+    }
+}
+
+@media(max-width: 400px) {
+    .editarM {
+        padding: 27px 30px;
+    }
+
+    .caja-comen {
+        width: 100%;
+        height: 125px;
+        margin-top: 20px;
+        background-color: #dedede;
+        border: none;
+    }
+
+    .editarM textarea:focus{
+        height: 125px;
+    }
+
+    .editar-content p {
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .editarM textarea {
+        font-family: 'Raleway', sans-serif;
+        padding: 20px;
+        font-size: 13px;
+        color: #787676;
+        border: 0;
+    }
+
+    .editarM textarea:focus{
+        font-size: 13px;
+    }
+}
+
+@media(max-width: 360px){
+    .editarM textarea {
+        font-family: 'Raleway', sans-serif;
+        padding: 20px;
+        font-size: 11px;
+        color: #787676;
+        border: 0;
+    }
+
+    .editarM textarea:focus{
+        font-size: 11px;
+    }
+
+    .guardando {
+        font-size: 11px;
+    }
+}
+
+@media(max-width: 320px){
+    .editarM textarea {
+        padding: 10px;
+    }
+
+    .editarM textarea:focus{
+        padding: 10px;
     }
 }
