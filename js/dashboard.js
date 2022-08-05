@@ -33,6 +33,8 @@ var eliminTarea = document.querySelector('.eliminarElim')
 var eliminar = document.querySelector('.eliminar-m');
 var inputEd = document.querySelector('#caja-comen');
 var inputEdOcul = document.querySelector('#inpOculto')
+/* var  variable para elemento eliminar*/
+var idElimin = null;
 
 var plus = document.querySelector('.plus');
 
@@ -65,42 +67,19 @@ function inicio() {
             tabla.innerHTML += `<div class="barra">
             <div class="barra-txt"><p>${tareas[index]}</p></div>
             <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
-            <div class="eliminar-m"><img class="eliminar" onclick="abrirElim()" src="./iconos/eliminar.png"></div></div>`
+            <div class="eliminar-m"><img class="eliminar" onclick="abrirElim(${index});" src="./iconos/eliminar.png"></div></div>`
 
         } else {
             tabla.innerHTML += `
             <div class="barra barra-last">
             <div class="barra-txt"><p>${tareas[index]}</p></div>
             <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
-            <div class="eliminar-m"><img class="eliminar" onclick="abrirElim()" src="./iconos/eliminar.png"></div></div>`
+            <div class="eliminar-m"><img class="eliminar" onclick="abrirElim(${index});" src="./iconos/eliminar.png"></div></div>`
         }
     }
 }
 
 inicio();
-/* elimInicio();
-
-function elimInicio() {
-    for (let index = 0; index < tareas.length; index++) {
-        if (index != (tareas.length - 1)) {
-            eliminBody.innerHTML +=  `<div class="botones-elimin">
-                    <button class="cancelarElim" onclick="cancelarElimin(${index})">CANCELAR</button>
-                    <button class="eliminarElim" onclick="eliminarTarea(${index})">ELIMINAR</button>
-                </div>` 
-
-        }
-    }
-}
- */
-function abilitarBtn(btn) {
-    btn.attr
-
-
-}
-
-function deshabilitarBtn() {
-
-}
 
 function mostrarError(elem, msj) {
     elem.innerHTML = ''
@@ -164,13 +143,13 @@ buscador.addEventListener('keyup', function () {
                 tabla.innerHTML += `<div class="barra">
                 <div class="barra-txt"><p>${filtro[index]}</p></div>
                 <div class="barra-btn"><div class="editar-m" ><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
-                <div class="eliminar-m"><img class="eliminar" onclick="abrirElim()" src="./iconos/eliminar.png"></div></div>`
+                <div class="eliminar-m"><img class="eliminar" onclick="abrirElim(${index});" src="./iconos/eliminar.png"></div></div>`
             } else {
                 tabla.innerHTML += `
                 <div class="barra barra-last">
                 <div class="barra-txt"><p>${filtro[index]}</p></div>
                 <div class="barra-btn"><div class="editar-m"><img class="editar" onclick="abrirEditarM(); editarTarea(${index});" src="./iconos/pen-blue.png"></div>
-                <div class="eliminar-m"><img class="eliminar" onclick="abrirElim()" src="./iconos/eliminar.png"></div></div>`
+                <div class="eliminar-m"><img class="eliminar" onclick="abrirElim(${index});" src="./iconos/eliminar.png"></div></div>`
             }
         }
     } else {
@@ -236,7 +215,6 @@ function validarModalEd() {
             corrInput(inputEd)
             return true
         } else {
-            console.log("holaaaaaa")
             errInput(inputEd)
             mostrarError(errGuardarEd, 'Solo puedes introducir letras, números y signos de puntuación', guardarEd)
             return false
@@ -310,7 +288,8 @@ function abrirEditarM() {
     modalEd.classList.remove('acept-editarM');
 }
 
-function abrirElim() {
+function abrirElim(id) {
+    idElimin = id
     contentElimin.classList.remove('acept-eliminar');
     modalElimin.classList.remove('acept-elemin');
 }
@@ -347,10 +326,11 @@ function guardarElemento() {
 }
 
 function eliminarTarea() {
-    tabla.innerHTML = ''
-    tareas.splice(1);
+    tareas.splice(idElimin, 1)
     actualizar()
+    cancelarElimin()
 }
+
 
 input.addEventListener("keyup", validarModal, false);
 inputEd.addEventListener("keyup", validarModalEd, false);
@@ -358,4 +338,4 @@ plus.addEventListener("click", abrirModal, false);
 guardarM.addEventListener("click", guardarModal, false);
 cancelarM.addEventListener("click", cancelarModal, false);
 guardarEd.addEventListener("click", guardarElemento, false);
-/* eliminTarea.addEventListener('click',); */
+eliminTarea.addEventListener("click", eliminarTarea, false);
